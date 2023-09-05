@@ -24,12 +24,12 @@ bundle add devise pg_search pagy
 Configurar Devise:
 rails generate devise:install
 rails g devise:views
-rails generate devise User role:integer email:string password:string
+rails generate devise User 
+
 Migrar Base de Datos:
-
 rails db:migrate
-Generar Modelo de Motor:
 
+Generar Modelo de Motor:
 rails g scaffold Motor type_of_equipment:string name:string description:text photo:string
 Generar Modelo de Mantenimiento:
 
