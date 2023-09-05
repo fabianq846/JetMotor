@@ -30,10 +30,14 @@ Migrar Base de Datos:
 rails db:migrate
 
 Generar Modelo de Motor:
-rails g scaffold Motor type_of_equipment:string name:string description:text photo:string
-Generar Modelo de Mantenimiento:
+rails g scaffold Motor equipment_type:string name:string description:text photo:attachment
 
-rails g scaffold Maintenance motor:references maintenance_type:string city:string materials:text technician_email:string maintenance_date:date
-Migración:
+Generar Modelo de Mantenimiento:
+rails g scaffold Maintenance motor_type:string maintenance_type:string motor_name:string city:string materials:string technician_email:string maintenance_date:date
 
 rails db:migrate
+
+En config/routes.rb:
+devise_scope :user do
+    root to: 'devise/sessions#new'
+end
