@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :materials
+  resources :cities
   resources :maintenances
   resources :motors
   devise_for :users
